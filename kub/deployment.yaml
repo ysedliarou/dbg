@@ -14,24 +14,10 @@ spec:
     spec:
       containers:
         - name: dbg
-          image: dbg:0.1
+          image: ysedcoupa/dbg:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
             - containerPort: 30123
-          readinessProbe:
-            httpGet:
-              path: /ping
-              port: 8080
-            successThreshold: 3
-#          volumeMounts:
-#            - mountPath: /go/src
-#              name: go-volume
-#      volumes:
-#        - name: go-volume
-#          persistentVolumeClaim:
-#            claimName: go-pvc
-#      nodeSelector:
-#        debug: "true"
 
 
