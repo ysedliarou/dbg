@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: debug-k8s-deployment
+  name: dbg-deployment
 spec:
   replicas: 1
   selector:
@@ -15,6 +15,7 @@ spec:
       containers:
         - name: dbg
           image: ysedcoupa/dbg:latest
+#          image: gcr.io/google-samples/hello-app:1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
