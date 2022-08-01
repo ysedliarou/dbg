@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"math/rand"
 )
 
 func main() {
@@ -15,14 +17,14 @@ func tst() {
 	engine.GET("/", func(ctx *gin.Context) {
 
 		ctx.JSON(200, gin.H{
-			"message": "home",
+			"message": fmt.Sprintf("home %d", rand.Int()),
 		})
 	})
 
 	engine.GET("/ping", func(ctx *gin.Context) {
 
 		ctx.JSON(200, gin.H{
-			"message": "ping",
+			"message": fmt.Sprintf("ping %d", rand.Int()),
 		})
 	})
 
