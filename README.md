@@ -19,4 +19,8 @@
     $ curl localhost:8080
 ```
 
+## Intellij
 
+![alt text](pics/idea-remote.png)
+
+![alt text](pics/idea-shot.png)
