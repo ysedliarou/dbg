@@ -8,7 +8,6 @@ WORKDIR /go/src/github.com/ysed/myapp
 COPY . .
 RUN make app.build
 
-EXPOSE 8080
-EXPOSE 30123
+EXPOSE 8080 30123
 
 ENTRYPOINT ["sh", "entrypoint.sh"]

@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: dbg
-          image: dbg:0.1
-#          image: ysedcoupa/dbg:latest
+#          image: dbg:0.2
+          image: ysedcoupa/dbg:latest
 #          image: gcr.io/google-samples/hello-app:1.0
           imagePullPolicy: Always
           ports:

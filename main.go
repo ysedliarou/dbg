@@ -8,10 +8,6 @@ import (
 
 func main() {
 
-	tst()
-}
-
-func tst() {
 	engine := gin.Default()
 
 	engine.GET("/", func(ctx *gin.Context) {
@@ -29,4 +25,5 @@ func tst() {
 	})
 
 	engine.Run()
+
 }
