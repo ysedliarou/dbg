@@ -6,7 +6,7 @@ RUN go install github.com/go-delve/delve/cmd/dlv@master
 
 WORKDIR /go/src/github.com/ysed/myapp
 COPY . .
-RUN make app.build
+RUN make
 
 EXPOSE 8080 30123
 
