@@ -1,7 +1,7 @@
-SRCROOT ?= $(realpath .)
+SRC_ROOT ?= $(realpath .)
 
-APP_DOCKER_LABEL = dbg
-APP_DOCKER_TAG = 0.1
+COMMIT = $(shell git log --pretty=format:'%h' -n 1)
+APP_DOCKER_TAG = ysedcoupa/dbg:$(COMMIT)
 
 default: build
 
@@ -19,11 +19,13 @@ test:
 	go test -coverprofile=coverage.out
 
 docker.build:
-	docker build \
-		-t $(APP_DOCKER_LABEL):$(APP_DOCKER_TAG) $(SRCROOT)
+	docker image build -t $(APP_DOCKER_TAG) $(SRC_ROOT)
 
 docker.run:
-	docker run -p 8080:8080 -p 30123:30123 $(APP_DOCKER_LABEL):$(APP_DOCKER_TAG)
+	docker run -p 8080:8080 -p 30123:30123 $(APP_DOCKER_TAG)
+
+docker.push:
+	docker image push $(APP_DOCKER_TAG)
 
 d: docker.build
 
