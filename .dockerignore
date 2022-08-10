@@ -1,0 +1,11 @@
+.idea
+.github
+.gitignore
+.dockerignore
+
+bin
+kub
+pics
+vendor
+README.md
+Dockerfile
