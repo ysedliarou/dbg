@@ -5,10 +5,13 @@ APP_DOCKER_TAG = ysedcoupa/dbg:$(COMMIT)
 
 default: build
 
+fmt:
+	go fmt ./...
+
 build: prepare
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -gcflags "all=-N -l" -o ./bin/app
 
-prepare: clean
+prepare: clean fmt
 	 go mod tidy && go mod vendor
 
 clean:
